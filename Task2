@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #main{
+                border-style: solid;
+                width: 240px;
+                background-color: black;
+                border-radius: 10px;
+                margin-top: 100px;
+                margin-left: 650px;
+            }
+            #dis{
+                height: 50px;
+                width: 215px;
+                margin-bottom: 5px;
+                background-color: white;
+                margin-top: 8px;
+                margin-left: 10px;
+            }
+            #cal{
+                display: grid;
+                grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-template-areas: 
+                "AC AC AC AC"
+                "d7 d8 d9 dm"
+                "d4 d5 d6 ds"
+                "d1 d2 d3 da"
+                "dp d0 de dd";
+                height: 280px;
+                width: 230px;
+                grid-gap: 5px;
+                margin-left: 5px;
+            }
+            #d1{
+                background-color: rgb(69, 67, 67);
+                color: white;
+                border-style: solid;
+                border-radius: 25px;
+                border-color: white;
+            }
+            #d2{
+                background-color: rgb(69, 67, 67);
+                color: white;
+                border-style: solid;
+                border-radius: 25px;
+                border-color: white;
+            }
+            #d3{
+                background-color: rgb(69, 67, 67);
+                color: white;
+                border-style: solid;
+                border-radius: 25px;
+                border-color: white;
+            }
+            #d4{
+                background-color: rgb(69, 67, 67);
+                color: white;
+                border-style: solid;
+                border-radius: 25px;
+                border-color: white;
+            }
+            #d5{
+                background-color: rgb(69, 67, 67);
+                color: white;
+                border-style: solid;
+                border-radius: 25px;
+                border-color: white;
+            }
+            #d6{
+                background-color: rgb(69, 67, 67);
+                color: white;
+                border-style: solid;
+                border-radius: 25px;
+                border-color: white;
+            }
+            #d7{
+                background-color: rgb(69, 67, 67);
+                color: white;
+                border-style: solid;
+                border-radius: 25px;
+                border-color: white;
+            }
+            #d8{
+                background-color: rgb(69, 67, 67);
+                color: white;
+                border-style: solid;
+                border-radius: 25px;
+                border-color: white;
+            }
+            #d9{
+                background-color: rgb(69, 67, 67);
+                color: white;
+                border-style: solid;
+                border-radius: 25px;
+                border-color: white;
+            }
+            #d0{
+                background-color: rgb(69, 67, 67);
+                color: white;
+                border-style: solid;
+                border-radius: 25px;
+                border-color: white;
+            }
+            #dp{
+                background-color: rgb(69, 67, 67);
+                color: white;
+                border-style: solid;
+                border-radius: 25px;
+                border-color: white;
+            }
+            #de{
+                background-color: rgb(69, 67, 67);
+                color: black;
+                border-style: solid;
+                border-radius: 25px;
+                background-color: rgb(185, 185, 75);
+                
+            }
+            #dd{
+                background-color: rgb(69, 67, 67);
+                color:yellow;
+                border-style: solid;
+                border-radius: 25px;
+                border-color: white;
+            }
+            #dm{
+                background-color: rgb(69, 67, 67);
+                color: yellow;
+                border-style: solid;
+                border-radius: 25px;
+                border-color: white;
+            }
+            #ds{
+                background-color: rgb(69, 67, 67);
+                color: yellow;
+                border-style: solid;
+                border-radius: 25px;
+                border-color: white;
+            }
+            #da{
+                background-color: rgb(69, 67, 67);
+                color: yellow;
+                border-style: solid;
+                border-radius: 25px;
+                border-color: white;
+            }
+            #AC{
+                background-color: rgb(69, 67, 67);
+                color: white;
+                border-style: solid;
+                border-color: white;
+                border-radius: 25px;
+            }
+            h2{
+                color: white;
+                margin-left:60px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <h2>calculator</h2>
+            <input type="text" id="dis"><br>
+            <div id="cal">
+                <button id="AC"  onclick="clearDisplay()">AC</button>
+                <button id="d7" onclick="toDisplay('7')">7</button>
+                <button id="d8" onclick="toDisplay('8')">8</button>
+                <button id="d9" onclick="toDisplay('9')">9</button>
+                <button id="dm" onclick="toDisplay('*')">*</button>
+                <button id="d4" onclick="toDisplay('4')">4</button>
+                <button id="d5" onclick="toDisplay('5')">5</button>
+                <button id="d6" onclick="toDisplay('6')">6</button>
+                <button id="ds" onclick="toDisplay('-')">-</button>
+                <button id="d1" onclick="toDisplay('1')">1</button>
+                <button id="d2" onclick="toDisplay('2')">2</button>
+                <button id="d3" onclick="toDisplay('3')">3</button>
+                <button id="da" onclick="toDisplay('+')">+</button>
+                <button id="dp" onclick="toDisplay('.')">.</button>
+                <button id="d0" onclick="toDisplay('0')">0</button>
+                <button id="de" onclick="calculate()">=</button>
+                <button id="dd" onclick="toDisplay('/')">/</button>
+            </div>
+        </div>
+        <script>
+            let display = document.getElementById('dis');
+    
+    function toDisplay(value) {
+        display.value += value;
+    }
+    function clearDisplay() {
+        display.value = '';
+    }
+    function calculate() {
+        try {
+            display.value = eval(display.value);
+        } catch (error) {
+            display.value = 'Error';
+        }
+    }
+    </script>
+    </body>
+</html> 
